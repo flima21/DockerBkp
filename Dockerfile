@@ -1,5 +1,9 @@
 FROM python:latest
-WORKDIR /src/
-COPY main.py .
-RUN pip3 install docker
-CMD ["python3", "src/main.py"]
+WORKDIR /app
+
+COPY src/main.py /app/main.py
+COPY requirements.txt /app/requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+CMD ["python3", "main.py"]  
