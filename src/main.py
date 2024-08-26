@@ -5,7 +5,7 @@ from shutil import make_archive
 
 # date today
 TODAY = datetime.now().strftime('%Y%m%d%H%M%S')
-DEBUG = True
+DEBUG = False
 
 # instance docker
 instance = docker.from_env()
@@ -22,7 +22,7 @@ for c in containers:
 
 for v in volumes:
     if DEBUG == False:
-        make_archive(f"Volume{v.name}{TODAY}",'zip',root_dir=v.attrs.get('Mountpoint'))            
+        make_archive(f"VolumesBkp/Volume{v.name}{TODAY}",'zip',root_dir=v.attrs.get('Mountpoint'))            
     else:
         print(v.name)
         print(v.attrs)
