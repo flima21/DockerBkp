@@ -1,0 +1,16 @@
+[Unit]
+Description=Efetua o BKP
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/python3 /home/flima/Development/DockerBkp/src/main.py
+WorkingDirectory=/home/flima/Development/DockerBkp/
+# Restart=always
+# RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
+
+
+
