@@ -25,7 +25,7 @@ for v in volumes:
         make_archive(f"Volume{v.name}{TODAY}",'zip',root_dir=v.attrs.get('Mountpoint'))            
     else:
         print(v.name)
-        
+        print(v.attrs)
 instance.close()
 
 print(f"BKP CREATED IN {os.getcwd()}")
